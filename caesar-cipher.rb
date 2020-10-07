@@ -2,11 +2,12 @@
 key = 0
 
 def caesar_cipher(string, key)
-    ascii = string.chars.map { |c| c.ord }
-    shifted = ascii.map { |c| c + key }
-    ciphered_text = shifted.map { |c| c.chr }.join
-    puts ciphered_text
+    alphabet = Array('a'..'z')
+    encrypter = Hash[alphabet.zip(alphabet.rotate(key))]
+    ciphered_text = string.chars.map { |c| encrypter.fetch(c, " ") }
+    p ciphered_text.join
+
 end
 
 
-caesar_cipher('WXyz', 6)
+caesar_cipher('a', 6)
