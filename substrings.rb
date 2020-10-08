@@ -3,8 +3,13 @@ dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","o
 
 # Create method
 def substrings(string, array)
-    #Find if string in dictionary
-    if
-    array.include? string
+    # Create empty hash
+    hash = {}
+    
+    # Iterate through dictionary
+    array.each do |substring|
+        hash[substring] = string.downcase.scan(substring).count if
+            string.downcase.include?(substring)
     end
+    hash
 end
