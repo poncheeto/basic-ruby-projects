@@ -16,8 +16,9 @@ def stock_picker(array)
 
     # Assign buy/sell into an array labeled 'profit'
     profit = [array.index(buy),array.index(sell)]
-    p profit
+    profit
 end
 
+stock_picker([17,3,6,9,15,8,6,1,10])
 
         
