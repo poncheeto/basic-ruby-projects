@@ -15,8 +15,11 @@ def stock_picker(array)
     buy = array.min
 
     # Assign buy/sell into an array labeled 'profit'
-    profit = [array.index(buy),array.index(sell)]
-    profit
+    if array.index(buy) > array.index(sell)
+      buy = array.min(2).last
+      profit = array.index(buy),array.index(sell)
+      p profit
+    end
 end
 
 stock_picker([17,3,6,9,15,8,6,1,10])
