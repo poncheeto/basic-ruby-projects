@@ -1,27 +1,28 @@
-# Create method 
 def stock_picker(array)
-    # Search array for highest integer that's not first
     if array.first == array.max
-        array[0] = array[1]
+      # If highest price first, set second highest to sell variable
+      sell = array.max(2).last
+    else
+      sell = array.max
     end
-    # Assign max to variable labeled 'buy'
-    sell = array.max
-    
-    # Search array for lowest integer that's not last
-    if array.last == array.min
-        array[-1] = array[-2]
-    end
-    # Assign min to variable labeled 'sell'
-    buy = array.min
 
-    # Assign buy/sell into an array labeled 'profit'
-    if array.index(buy) > array.index(sell)
+    if array.last == array.min
+      # If lowest price last, set second lowest to buy variable
       buy = array.min(2).last
+    else
+      buy = array.min
+    end
+
+    if array.index(buy) > array.index(sell)
+      # If index of low price greater than high price, set second lowest to buy variable
+      buy = array.min(2).last
+      # Assign buy/sell into an array labeled 'profit'
+      profit = array.index(buy),array.index(sell)
+      p profit
+    else
       profit = array.index(buy),array.index(sell)
       p profit
     end
 end
 
 stock_picker([17,3,6,9,15,8,6,1,10])
-
-        
