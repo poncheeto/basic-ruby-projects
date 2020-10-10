@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def stock_picker(array)
   sell = if array.first == array.max # If highest price first, set second highest to sell variable
            array.max(2).last
